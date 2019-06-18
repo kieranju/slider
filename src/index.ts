@@ -1,10 +1,10 @@
 abstract class SlideOptions {
     debug: boolean = false
-    waitForImages: boolean = true
     tickTime: number = 300
     tockTime: number = 1000
     activeClassName: string = 'active'
     loadedClassName: string = 'loaded'
+    afterPageLoad: boolean = true
 }
 
 class SlideHandler {
@@ -59,10 +59,10 @@ class Slide {
         this.cards = cards
         this.options = options
 
-        if (this.options.waitForImages && window) {
-            window.onload = () => {
+        if (this.options.afterPageLoad && window) {
+            window.addEventListener('load', () => {
                 this.init()
-            }
+            })
         } else {
             this.init()
         }
