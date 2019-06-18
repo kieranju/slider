@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "noImplicitReturns": true,
+    "removeComments": true,
+    "strict": true,
+    "rootDir": "./src",
+    "outDir": "./lib",
+    "module": "commonjs",
+    "target": "es5",
+    "lib": ["dom","es6"]
+  }
+}

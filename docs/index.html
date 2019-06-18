@@ -1,0 +1,103 @@
+<style>
+    body {
+        margin: 0;
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    }
+
+    .wrapper {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .slider {
+        position: relative;
+        max-width: 900px;
+        max-height: 500px;
+    }
+
+    /* Use padding-bottom to calculate the size of a placeholder for document flow, preventing jumping when page loads */
+    .slider::before {
+        display: block;
+        content: '';
+        background-color: #dddddd;
+
+        /* (max-height / max-width * 100) to get aspect ratio percentage */
+        padding-bottom: calc(500 / 900 * 100%);
+        padding-bottom: 55.55555555555556%;
+    }
+
+    .slide {
+        position: absolute;
+        display: inline-block;
+        width: 100%;
+        top: 0;
+        opacity: 0;
+        transition: opacity 300ms;
+    }
+
+    .slide > h1 {
+        position: absolute;
+        top: 0;
+        margin-left: 1em;
+        opacity: 1;
+    }
+
+    .slide > img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    /* First slide is always visible */
+    .slide:first-child {
+        opacity: 1;
+    }
+    
+    /* Fade in image after it is loaded */
+    .slide:first-child > img {
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    .slider.loaded .slide:first-child > img {
+        opacity: 1;
+    }
+
+    /* Active slide becomes visible, and ensures it properly sitting above all other slides */
+    .slide.active {
+        z-index: 1;
+        opacity: 1;
+    }
+</style>
+
+<div class="wrapper">
+
+    <div class="slider" data-slider-deck="unique-name">
+        <div class="slide" data-slider-card="unique-name">
+            <img src="https://via.placeholder.com/900x500/f1f1d3">
+            <h1>Say hello to my little friends.</h1>
+        </div>
+        <div class="slide" data-slider-card="unique-name">
+            <img src="https://via.placeholder.com/900x500/f1d3f1">
+            <h1>Hasta la vista.</h1>
+        </div>
+        <div class="slide" data-slider-card="unique-name">
+            <img src="https://via.placeholder.com/900x500/d3f1f1">
+            <h1>Whazzuuuup.</h1>
+        </div>
+    </div>
+
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium beatae voluptatem libero excepturi voluptates placeat, asperiores unde maiores suscipit consequatur quos, totam sed? Provident maiores iure error, atque rerum culpa!</p>
+
+</div>
+
+<script src="./index.js"></script>
+<script>
+    new SlideHandler({
+        debug: false,
+        waitForImages: true,
+        tickTime: 300,
+        tockTime: 2000,
+        activeClassName: 'active',
+        loadedClassName: 'loaded',
+    });
+</script>

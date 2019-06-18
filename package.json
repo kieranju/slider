@@ -1,0 +1,36 @@
+{
+  "name": "slider",
+  "version": "0.0.1",
+  "description": "Simple image slider",
+  "main": "index.js",
+  "private": true,
+  "author": {
+    "name": "Kieran Utz",
+    "email": "kieranju@me.com"
+  },
+  "homepage": "https://github.com/kieranju/slider",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kieranju/slider"
+  },
+  "keywords": [
+    "slider",
+    "dom"
+  ],
+  "bugs": {
+    "url": "https://github.com/kieranju/slider/issues"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "engines": {
+    "node": "10.15.3",
+    "npm": "6.9.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.5.2"
+  }
+}
