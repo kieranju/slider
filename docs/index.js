@@ -1,12 +1,11 @@
-"use strict";
 var SlideOptions = (function () {
     function SlideOptions() {
         this.debug = false;
-        this.waitForImages = true;
         this.tickTime = 300;
         this.tockTime = 1000;
         this.activeClassName = 'active';
         this.loadedClassName = 'loaded';
+        this.afterPageLoad = true;
     }
     return SlideOptions;
 }());
@@ -53,10 +52,10 @@ var Slide = (function () {
         this.deck = deck;
         this.cards = cards;
         this.options = options;
-        if (this.options.waitForImages && window) {
-            window.onload = function () {
+        if (this.options.afterPageLoad && window) {
+            window.addEventListener('load', function () {
                 _this.init();
-            };
+            }, false);
         }
         else {
             this.init();

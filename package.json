@@ -2,7 +2,6 @@
   "name": "slider",
   "version": "0.0.1",
   "description": "Simple image slider",
-  "main": "index.js",
   "private": true,
   "author": {
     "name": "Kieran Utz",
@@ -24,7 +23,7 @@
     "build": "tsc"
   },
   "files": [
-    "lib/**/*"
+    "build/**/*"
   ],
   "engines": {
     "node": "10.15.3",

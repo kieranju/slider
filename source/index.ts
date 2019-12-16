@@ -62,7 +62,7 @@ class Slide {
         if (this.options.afterPageLoad && window) {
             window.addEventListener('load', () => {
                 this.init()
-            })
+            }, false)
         } else {
             this.init()
         }
